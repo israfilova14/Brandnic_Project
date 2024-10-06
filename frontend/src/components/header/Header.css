@@ -1,0 +1,240 @@
+ .headerWrapper {
+    background: #fff;  
+}
+
+header .container {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #fff; 
+    padding:  20px;  
+    overflow: hidden;  
+}
+
+.container .logoWrapper {
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .logoWrapper a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .logoWrapper h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.container .logoWrapper h2 span {
+    color: #6c3483;
+}
+
+.container .logoWrapper img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.container .searchBoxWrapper {
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .searchBox {
+    width: 540px;
+    color: #000;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 2px solid #bd92b8;
+    padding: 0px 5px;
+}
+
+.container .searchBox input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    background: transparent;
+}
+
+.container .searchBox input::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.container .searchBox svg {
+    width: 20px;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.container .iconsBox {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container .iconsBox .box {
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    background: #bd92b8;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.container .iconsBox .box:hover {
+    background: #90b8a0;
+}
+
+.container .iconsBox .box svg {
+    width: 24px;
+    height: 24px;
+}
+
+.container .iconsBox .group {
+    position: relative;
+}
+
+.container .iconsBox .profilePicture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    padding: 1px;
+}
+
+.container .iconsBox .group .pop_up {
+    height: 50px;
+    width: 130px;
+    z-index: 1000;
+    position: absolute;
+    top:  28px;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container .iconsBox .group .pop_up:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.iconsBox .basket-box svg {
+    position: absolute;
+}
+
+.iconsBox .basket-box span {
+    font-size: 15px;
+    width: 24px;
+    height: 21px;
+    position: relative;
+    bottom: 14px;
+    left: 14px;
+    background-color: #90b8a0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconsBox .buttons-box button {
+    color: #fff;
+    background: #bd92b8;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+}
+
+.iconsBox .buttons-box button:hover {
+    background: #90b8a0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container .searchBox {
+        width: 300px; /* Adjust search box width */
+    }
+
+    .container .iconsBox {
+        gap: 20px; /* Reduce gap between icons */
+    }
+
+    .container .logoWrapper h2 {
+        font-size: 28px; /* Adjust font size */
+    }
+}
+
+@media  (max-width: 1024px){
+    header .container {
+        flex-direction: column;  
+        height: auto; 
+        padding: 10px 20px;  
+    }
+
+    .container .logoWrapper,
+    .container .searchBoxWrapper,
+    .container .iconsBox {
+        flex: 1;  
+        justify-content: center;  
+        margin: 5px 0;  
+    }
+
+    .container .searchBox {
+        width: 100%;  
+    }
+
+    .container .logoWrapper img {
+        width: 60px;  
+        height: 60px;
+    }
+
+    .container .logoWrapper h2 {
+        font-size: 24px;  
+    }
+}
+
+@media (max-width: 480px) {
+    .container .searchBox {
+        width: 100%;  
+    }
+
+    .container .searchBox input {
+        width: 100%;  
+    }
+
+    .iconsBox .buttons-box button {
+        padding: 5px;  
+    }
+
+    .container .logoWrapper h2 {
+        font-size: 20px; 
+    }
+
+    .container .iconsBox .box {
+        width: 28px;
+        height: 28px;
+    }
+}

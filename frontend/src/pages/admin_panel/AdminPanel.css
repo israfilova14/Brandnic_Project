@@ -1,0 +1,89 @@
+.adminPanelWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.adminPanelWrapper aside{
+    color: #fff;
+    flex: 0.2;
+    height: 122.5vh;
+    width: 100%;
+    background: #bd92b8;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.adminPanelWrapper aside .adminLogoWrapper{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+}
+
+.adminPanelWrapper aside .adminLogoWrapper img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.adminPanelWrapper aside .titlesBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.adminPanelWrapper aside .titlesBox .admin-title{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.adminPanelWrapper aside .titlesBox .role{
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.adminPanelWrapper aside .navigationBox nav a{
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 98%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    gap: 15px;
+    background: #f7f9f9;
+}
+
+.adminPanelWrapper aside .navigationBox nav a:hover{
+    background: #ecf0f1;
+}
+
+.adminPanelWrapper main{
+    flex: 0.8;
+}
+
+@media only screen and (min-width: 731px) and (max-width:1024px){
+    .adminPanelWrapper aside{
+        flex: 0.3;
+    }
+
+    .adminPanelWrapper main{
+        flex: 0.7;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .adminPanelWrapper aside{
+        flex: 0.35;
+    }
+
+    .adminPanelWrapper main{
+        flex: 0.65;
+    }
+}

@@ -1,0 +1,13 @@
+.footerWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #f2f3f4;
+}
+
+.footerWrapper p{
+    font-size: 16.5px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+}

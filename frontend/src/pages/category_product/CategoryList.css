@@ -1,0 +1,94 @@
+.productCategoryWrapper{
+    width: 100%;
+    background: #f2f3f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+.productCategoryBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    cursor: pointer;
+}
+
+.productCategoryWrapper .loadingBox{
+    width: 30px;
+    height: 30px;
+    background: #fbfcfc ;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.productCategoryWrapper .productCategoryBox img{
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    transition: transform 0.3s ease; 
+}
+
+.productCategoryWrapper .productCategoryBox p{
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.productCategoryBox img:hover{
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+}
+
+@media only screen and (min-width: 776px) and (max-width: 1024px) {
+    .productCategoryWrapper .productCategoryBox img{
+        width: 51px;
+        height: 51px;
+    }
+}
+
+@media only screen and (min-width: 543px) and (max-width: 775px){
+    .productCategoryWrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .productCategoryWrapper .productCategoryBox img{
+        width: 51px;
+        height: 51px;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 543px){
+    .productCategoryWrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .productCategoryWrapper .productCategoryBox img{
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        
+    }
+    
+}

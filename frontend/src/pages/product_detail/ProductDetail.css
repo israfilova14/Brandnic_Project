@@ -1,0 +1,292 @@
+.productDetailWrapper{
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productDetailWrapper .container{
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.productDetailWrapper .container .top{
+    display: flex;
+}
+
+.container .productImageSide{
+    display: flex;
+    gap: 30px;
+}
+
+.container .loadingImgWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.container .loadingImgWrapper .loadBox{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background: #ebebeb;
+}
+
+.container .slideImgWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.container .slideImgWrapper .slideImgBox{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ebebeb;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container .slideImgWrapper .slideImgBox .slideImg{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    mix-blend-mode: multiply !important;
+    cursor: pointer;
+}
+
+.container .productImageSide{
+    display: flex;
+    flex-direction: row;
+}
+
+.container .loadMainImg{
+    width: 540px;
+    height: 600px;
+    background: #ebebeb;
+    border-radius: 10px;
+}
+
+.container .mainImgBox{
+    width: 540px;
+    height: 510px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .productZoomImage{
+    position: absolute;
+    width: 540px;
+    height: 540px;
+    right: 250px;
+    bottom: 80px;
+    padding: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.container .mainImgBox img{
+    mix-blend-mode: multiply !important;
+    width: 500px;
+    height: 500px;
+}
+
+.container .productDetailsSide {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container .productDetailsSide p{
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.container .productDetailsSide h2{
+    font-weight: 500;
+    font-size: 24px;
+    color:#2e84bd;
+}
+
+.container .productDetailsSide .starsBox{
+    display: flex !important;
+}
+
+.container .productDetailsSide .starsBox svg{
+    font-size: 23px;
+    color: rgb(239, 239, 10);
+}
+
+.container .productDetailsSide .priceBox{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .productDetailsSide .priceBox .selPrice{
+    font-size: 22px;
+    color: #229954;
+}
+
+.container .productDetailsSide .priceBox .prevPrice{
+    font-size: 22px;
+    color: rgb(75, 75, 75);
+    text-decoration: line-through;
+}
+
+.container .productDetailsSide .btnBox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container .productDetailsSide .btnBox button{
+    width: 140px;
+    padding: 7px 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.container .productDetailsSide .btnBox .btn1{
+    background: #229954;
+}
+
+
+.container .productDetailsSide .btnBox .btn1:hover{
+    background: #27ad5f;
+}
+
+.container .productDetailsSide .btnBox .btn2{
+    background: #2874a6;
+}
+
+.container .productDetailsSide .btnBox .btn2:hover{
+    background: #2e84bd;
+}
+
+.container .productDetailsSide .descriptionBox .prodDescription{
+    color: rgb(75, 75, 75);
+    width: 480px;
+}
+
+.container .loadDetailsBox{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container .loadDetailsBox .loadBrandName,
+.container .loadDetailsBox .loadProductName
+{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background: #ebebeb;
+}
+
+.container .loadDetailsBox .loadStarsBox{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.container .loadDetailsBox .loadStarsBox div{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ebebeb;
+}
+
+.container .loadDetailsBox .loadPriceBox,
+.container .loadDetailsBox .loadBtnBox{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.container .loadDetailsBox .loadPriceBox div,
+.container .loadDetailsBox .loadBtnBox button{
+    width: 140px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ebebeb;
+}
+
+.loadDetailsBox .loadDescriptionBox{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background: #ebebeb;
+}
+
+@media only screen and (min-width:  728px) and (max-width: 900px){
+    .productDetailWrapper .container .top{
+        padding: 20px  0px 10px 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .container .mainImgBox img{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px){
+    .container .mainImgBox{
+        width: 360px;
+        height: 360px;
+    }
+
+    .container .productDetailsSide h2{
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .container .productDetailsSide .descriptionBox .prodDescription{
+        width: 240px !important;
+    }
+
+    .container .top{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 50px
+    }
+
+    .container .wise{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 727px){
+    .productDetailWrapper .container .top{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+       
+    }
+
+    .container .mainImgBox {
+        height: 360px;
+    }
+
+    .container .mainImgBox img{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+ 
