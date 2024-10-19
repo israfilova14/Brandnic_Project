@@ -200,7 +200,7 @@ const UploadProduct = ({
                           />
                         </div>
                         <div className='row'>
-                            <label htmlFor='sellingPrice'>Selling Prcie:</label>
+                            <label htmlFor='sellingPrice'>Selling Price:</label>
                             <input 
                               type='number' 
                               id='sellingPrice' 

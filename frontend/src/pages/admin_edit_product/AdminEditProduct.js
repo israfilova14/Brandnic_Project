@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../admin_edit_product/AdminEditProduct.css";
-import { IoCloseOutline } from "react-icons/io5";
 import productCategory from '../../helpers/ProductCategory';
 import { FaCloudUploadAlt } from "react-icons/fa";
 import UploadImage from '../../helpers/UploadImage';
@@ -8,6 +7,7 @@ import DisplayImage from '../display_image/DisplayImage';
 import { MdDeleteOutline } from "react-icons/md";
 import SummaryApi from '../../common';
 import { toast } from "react-toastify";
+import { IoCloseOutline } from 'react-icons/io5';
 
 const AdminEditProduct = ({
   onClose,
@@ -36,7 +36,7 @@ const AdminEditProduct = ({
     }));
   };
 
-  const handleUploadProduct = async (e) => {
+  const handleUploadProduct = async(e) => {
     const file = e.target.files[0];
     const uploadImageCloudinary = await UploadImage(file);
     console.log('upload image', uploadImageCloudinary.url);
@@ -179,7 +179,7 @@ const AdminEditProduct = ({
               </div>
             </div>
             <div className='row'>
-              <label>Prcie:</label>
+              <label>Price:</label>
               <input
                 type='number'
                 id='price'

@@ -7,7 +7,7 @@
 .userRoleBox .userRoleModal{
     width: 380px;
     padding: 10px;
-    border: 2px solid #90b8a0;
+    border: 2px solid #00b98a;
     color: rgba(0, 0, 0, 0.8);
     font-size: 17px;
     display: flex;
@@ -30,7 +30,7 @@
 }
 
 .userRoleBox .userRoleModal .close_ svg:hover{
-    color: #6d967d;
+    color: #02a27a;
 }
 
 .userRoleBox .userRoleModal .row{
@@ -47,7 +47,7 @@
 
 .userRoleBox .userRoleModal .row svg:hover{
     color: #fff;
-    background-color: #90b8a0;
+    background-color: #02a27a;
 }
 
 .userRoleBox .userRoleModal h2{
@@ -74,7 +74,7 @@
 
 .userRoleBox .userRoleModal select {
     font-size: 16px;
-    border: 2px solid #90b8a0;
+    border: 2px solid #00b98a;
     border-radius: 6px;
     outline: none;
     padding: 3px;
@@ -88,12 +88,12 @@
 .userRoleBox .userRoleModal button{
      padding: 8px;
      width: 150px;
-     background: #90b8a0;
+     background: #00b98a;
      color: #fff;
      border-radius: 6px;
      margin: 10px auto;
 }
 
 .userRoleBox .userRoleModal button:hover{
-     background: #6d967d;
+     background: #02a27a
 }

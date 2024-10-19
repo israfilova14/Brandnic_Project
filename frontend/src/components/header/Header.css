@@ -32,7 +32,7 @@ header .container {
 }
 
 .container .logoWrapper h2 span {
-    color: #6c3483;
+    color: #9B009E;
 }
 
 .container .logoWrapper img {
@@ -58,7 +58,7 @@ header .container {
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
-    border: 2px solid #bd92b8;
+    border: 2px solid #9B009E;
     padding: 0px 5px;
 }
 
@@ -92,7 +92,7 @@ header .container {
     width: 36px;
     height: 36px;
     color: #fff;
-    background: #bd92b8;
+    background: #9B009E;
     padding: 10px;
     border-radius: 50%;
     display: flex;
@@ -102,10 +102,10 @@ header .container {
 }
 
 .container .iconsBox .box:hover {
-    background: #90b8a0;
+    background: #00B98A;
 }
 
-.container .iconsBox .box svg {
+.container .box svg {
     width: 24px;
     height: 24px;
 }
@@ -152,7 +152,7 @@ header .container {
     position: relative;
     bottom: 14px;
     left: 14px;
-    background-color: #90b8a0;
+    background-color: #00B98A;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -161,7 +161,7 @@ header .container {
 
 .iconsBox .buttons-box button {
     color: #fff;
-    background: #bd92b8;
+    background: #9B009E;
     padding: 5px 15px;
     border-radius: 20px;
     border: 0;
@@ -169,7 +169,7 @@ header .container {
 }
 
 .iconsBox .buttons-box button:hover {
-    background: #90b8a0;
+    background: #00B98A;
 }
 
 /* Responsive Styles */

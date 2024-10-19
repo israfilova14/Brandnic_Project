@@ -23,6 +23,8 @@ const updateAddToCartProductController = require('../controller/user/updateAddTo
 const deleteAddToCartProductController = require('../controller/user/deleteAddToCartProduct');
 const searchProductController = require('../controller/product/searchProduct');
 const filterProductController = require('../controller/product/filterProduct');
+const removeUserController = require('../controller/user/removeUser');
+const removeProductController = require('../controller/product/removeProduct');
 const router = express.Router();
 
 // users 
@@ -30,6 +32,7 @@ router.post("/signup", userSignUpController);
 router.post("/signin", userSignInController);
 router.get("/user-details", authToken ,userDetailController);
 router.get("/userLogout", userLogout);
+router.post("/delete-user", authToken, removeUserController);
 
 //admin panel
 router.get("/all-users", authToken, allUsers);
@@ -43,7 +46,8 @@ router.get("/get-categoryProduct", getCategoryProduct);
 router.post("/category-product", getCategoryWiseProduct);
 router.post("/product-details", getProductDetails);
 router.get("/search", searchProductController);
-router.post("/filter-product", filterProductController)
+router.post("/filter-product", filterProductController);
+router.post("/delete-product", authToken, removeProductController);
 
 // user add to cart
 router.post("/addtocart", authToken, addToCartController);

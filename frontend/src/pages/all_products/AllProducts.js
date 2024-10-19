@@ -3,6 +3,7 @@ import '../all_products/AllProducts.css';
 import UploadProduct from '../upload_product/UploadProduct';
 import SummaryApi from '../../common';
 import AdminProductCart from '../admin_product_card/AdminProductCart';
+import { toast } from 'react-toastify';
 
 const AllProducts = () => {
   const [openUploadProduct, setOpenUploadProduct] = useState(false);
@@ -36,6 +37,32 @@ const AllProducts = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleDeleteProduct = async(productId) => {
+    try{
+        const response = await fetch(SummaryApi.deleteProduct.url, {
+           method: SummaryApi.deleteProduct.method,
+           headers: {
+             'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({_id: productId}),
+           credentials: 'include'
+        })
+
+        const dataResponse = await response.json();
+
+        if(dataResponse.success){
+           toast.success('Product deleted successfully');
+           setAllProduct(allProduct.filter(product => product._id !== productId))
+        }
+        else if(dataResponse.error){
+           toast.error(dataResponse.message)
+        }
+    }catch(err){
+       toast.error('Error deleting product...');
+       console.error('Delete product', err)
+    }
+  }
+
   return (
     <div className='allProductsWrapper'>
       <div className='headerWrapper'>
@@ -47,7 +74,12 @@ const AllProducts = () => {
       
       <div className='adminProductsWrapper' style={{ overflow: 'hidden' }}>
         {currentProducts.map((product, index) => (
-          <AdminProductCart data={product} key={index + "allProduct"} fetchData={fetchAllProduct}/>
+          <AdminProductCart 
+             data={product}
+             key={index + "allProduct"}
+             fetchData={fetchAllProduct}
+             handleDeleteProduct={handleDeleteProduct}
+          />
         ))}
       </div>
 

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import '../all_users/AllUsers.css'
 import SummaryApi from '../../common';
 import {toast} from 'react-toastify';
-import { PiPencilSimpleLineLight } from "react-icons/pi";
-import { MdDeleteOutline } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import ChangeUserRole from '../change_userRole/ChangeUserRole';
 import "../admin_panel/AdminPanel.css"
 const AllUsers = () => {
@@ -39,6 +39,31 @@ const AllUsers = () => {
     fetchAllUsers();
   }, []);
 
+  const handleDeleteUser = async(userId) => {
+     try{
+       const response = await fetch(SummaryApi.deleteUser.url, {
+          method: SummaryApi.deleteUser.method,
+          headers: {
+             'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({_id: userId}),
+          credentials: 'include'
+       })
+
+       const dataResponse = await response.json();
+       if(dataResponse.success){
+          toast.success("User deleted successfully");
+          setAllUsers(allUsers.filter(user => user._id !== userId))
+       }
+       else if(dataResponse.error){
+           toast.error(dataResponse.message)
+       }
+     }catch(err){
+        toast.error("Error deleting user.")
+        console.error('Delete user', err)
+     }
+  }
+
   return (
     <div className='tableWrapper'>
       <div className='titleBox'>
@@ -67,7 +92,7 @@ const AllUsers = () => {
                   <td>{new Date(element.createdAt).toLocaleDateString()}</td>
                   <td>
                     <div className='actionsBox'>
-                        <PiPencilSimpleLineLight
+                        <FaPen
                         className='edit_'
                            onClick={() => {
                             setUpdateUserDetails(element)
@@ -75,7 +100,10 @@ const AllUsers = () => {
                           }
                           }
                         />
-                        <MdDeleteOutline className='delete_'/>
+                        <MdDelete
+                           onClick={() => handleDeleteUser(element._id)}
+                           className='delete_'
+                        />
                     </div>
                   </td>
                 </tr>

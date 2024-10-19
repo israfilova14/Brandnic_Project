@@ -14,7 +14,7 @@
 }
 
 .tableWrapper .titleBox h2 span{
-    color: #90b8a0;
+    color: #00B98A;
 }
 
 .tableWrapper table{
@@ -22,7 +22,7 @@
 }
 .tableWrapper table thead{
     color: #fff;
-    background:  #90b8a0;
+    background: #00B98A;
 }
 .tableWrapper table thead tr th{
     font-weight: 400;
@@ -36,39 +36,38 @@
  
 .tableWrapper table tbody tr td{
    padding: 10px 52px;
-   border: 1px solid #90b8a0;
+   border: 1px solid #00B98A;
 }
 
 .tableWrapper table tbody tr td .actionsBox{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
   
 }
 
 .tableWrapper table tbody tr td .actionsBox svg{
-    width: 27px;
-    height: 27px;
-    border-radius: 50%;
-    color: #fff;
-    padding: 3px;
+    width: 22px;
+    height: 22px;
 }
 
 .tableWrapper table tbody tr td .actionsBox .edit_{
-    background: #90b8a0
+    width: 19px;
+    height: 18px;
+    color: #00B98A;
 }
 
 .tableWrapper table tbody tr td .actionsBox .edit_:hover{
-    background: #6a9d7f
+    color: #009B70;
 }
 
 .tableWrapper table tbody tr td .actionsBox .delete_{
-    background: #cd6155;
+    color: #cd6155;
 }
 
 .tableWrapper table tbody tr td .actionsBox .delete_:hover{
-    background: #c0392b;
+    color: #c0392b;
 }
 
 @media only screen and (min-width: 1024px){

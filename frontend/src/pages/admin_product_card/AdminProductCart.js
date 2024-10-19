@@ -7,7 +7,8 @@ import displayCurrency from '../../helpers/DisplayCurrency';
 
 const AdminProductCart = ({
   data,
-  fetchData
+  fetchData,
+  handleDeleteProduct
 }) => {
   const [editProduct, setEditProduct] = useState(false);
   
@@ -26,7 +27,10 @@ const AdminProductCart = ({
                 className='edit_'
                 onClick={() => setEditProduct(true)}
              />
-             <MdDelete className='delete_'/>
+             <MdDelete 
+                 className='delete_'
+                 onClick={() => handleDeleteProduct(data._id)}
+             />
         </div>
         {
           editProduct && (

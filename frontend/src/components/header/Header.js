@@ -79,7 +79,7 @@ const Header = () => {
           </div>
           <div className='iconsBox '>
             <div className='group'>
-              {user?._id && (
+              {user?.role === 'ADMIN' && (
                 <div>
                   {user?.profilePic ? (
                     <img src={user?.profilePic} className='profilePicture' />
@@ -100,23 +100,38 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link className='box'>
-              <FaRegHeart className='heartIcon' />
-            </Link>
-            {user?._id && (
-              <Link to={"/cart"} className='basket-box box'>
-                <BsCart2 />
-                <span>{context?.cartProductCount}</span>
-              </Link>
-            )}
+            {
+               (
+                 (user && user.role === 'GENERAL') && (
+                  <Link className='box'>
+                     <FaRegHeart className='heartIcon' />
+                  </Link>
+                 )
+               )
+            }
+            {
+              (
+                user && user.role === 'GENERAL') && (
+                  <Link to={"/cart"} className='basket-box box'>
+                    <BsCart2 />
+                    <span>{context?.cartProductCount}</span>
+                  </Link>
+               )
+            }
             <div className='buttons-box'>
-              {user?._id ? (
-                <button onClick={handleLogout} className='logoutBtn'>Logout</button>
-              ) : (
-                <Link to={'/login'}>
-                  <button className='loginBtn'>Login</button>
-                </Link>
-              )}
+              {
+                user 
+                ? 
+                  (
+                    <button onClick={handleLogout} className='logoutBtn'>Logout</button>
+                  ) 
+                : 
+                  (
+                      <Link to={'/login'}>
+                        <button className='loginBtn'>Login</button>
+                      </Link>
+                  )
+              }
             </div>
           </div>
         </div>

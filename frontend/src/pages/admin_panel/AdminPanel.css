@@ -4,12 +4,10 @@
 }
 
 .adminPanelWrapper aside{
-    color: #fff;
     flex: 0.2;
     height: 122.5vh;
     width: 100%;
-    background: #bd92b8;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background: #f2f3f4;
 }
 
 .adminPanelWrapper aside .adminLogoWrapper{
@@ -45,7 +43,8 @@
 }
 
 .adminPanelWrapper aside .navigationBox nav a{
-    color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-weight: 600;
     text-align: center;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -57,11 +56,12 @@
     justify-content: center;
     border-radius: 6px;
     gap: 15px;
-    background: #f7f9f9;
+    background: #9b009e;
 }
 
 .adminPanelWrapper aside .navigationBox nav a:hover{
-    background: #ecf0f1;
+    background: #fff;
+    color: #9b009e;
 }
 
 .adminPanelWrapper main{

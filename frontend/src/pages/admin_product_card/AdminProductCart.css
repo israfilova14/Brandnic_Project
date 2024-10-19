@@ -50,7 +50,7 @@
 }
 
 .adminProductCart .icons_box .edit_{
-    background: #90b8a0;
+    background: #00B98A;
 }
 
 .adminProductCart .icons_box .delete_{
@@ -58,7 +58,7 @@
 }
 
 .adminProductCart .icons_box .edit_:hover{
-    background: #6a9d7f;
+    background: #009B70;
 }
 
 .adminProductCart .icons_box .delete_:hover{

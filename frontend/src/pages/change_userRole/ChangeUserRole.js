@@ -13,6 +13,8 @@ const ChangeUserRole = ({
   userId,
   setOpenUpdateRole
 }) => {
+  const [userName, setUserName] = useState(name);
+  const [userEmail, setUserEmail] = useState(email);
   const [userRole, setUserRole] = useState(role);
   const [loading, setLoading] = useState(false); // Loading state
 
@@ -31,6 +33,8 @@ const ChangeUserRole = ({
         },
         body: JSON.stringify({
           userId: userId,
+          name: userName,
+          email: userEmail,
           role: userRole
         })
       });
@@ -58,11 +62,21 @@ const ChangeUserRole = ({
         </div>
         <h2>Change User Role</h2>
         <div className='update_name row'>
-              <p>Name: {name}</p>
+              <p>Name: </p>
+              <input
+                type='text'
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              />
               <FaPencil/>
         </div>
         <div className='update_email row'>
-              <p>Email: {email}</p>
+              <p>Email: </p>
+              <input
+                type='email'
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
+              />
               <FaPencil/>
         </div>
         <div className='col'>
