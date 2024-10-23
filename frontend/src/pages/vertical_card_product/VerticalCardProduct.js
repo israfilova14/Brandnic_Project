@@ -28,6 +28,7 @@ const VerticalCardProduct = ({category, heading}) => {
         setLoading(false)
         setData(categoryProduct?.data)
     }
+    
     useEffect(() => {
          fetchData()
     },[category])

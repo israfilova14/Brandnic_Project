@@ -105,6 +105,7 @@
 .productCardWrapper .productCard .aboutProduct .productCategory{
     text-transform: capitalize;
 }
+
 .productCardWrapper .productCard .aboutProduct .priceBox{
     display: flex;
     gap: 12px;
