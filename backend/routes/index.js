@@ -1,4 +1,6 @@
 const express = require('express');
+const router = express.Router();
+
 //USERS
 const userSignUpController = require('../controller/user/userSignUp');
 const userSignInController = require('../controller/user/userSignIn');
@@ -16,16 +18,19 @@ const authToken = require('../middleware/authToken');
 const getCategoryProduct = require('../controller/product/getCategoryProduct');
 const getCategoryWiseProduct = require('../controller/product/getCategoryWiseProduct');
 const getProductDetails = require('../controller/product/getProductDetails');
-const addToCartController = require('../controller/user/addToCartController');
-const countAddToCartProduct = require('../controller/user/countAddToCartProduct');
-const addToCartViewProduct = require('../controller/user/addToCartViewProduct');
-const updateAddToCartProductController = require('../controller/user/updateAddToCartProduct');
-const deleteAddToCartProductController = require('../controller/user/deleteAddToCartProduct');
 const searchProductController = require('../controller/product/searchProduct');
 const filterProductController = require('../controller/product/filterProduct');
 const removeUserController = require('../controller/user/removeUser');
 const removeProductController = require('../controller/product/removeProduct');
-const router = express.Router();
+const addToBasketController = require('../controller/user/user_basket/addToBasketController');
+const countBasketProductCart = require('../controller/user/user_basket/countBasketProductCart');
+const addToBasketViewProduct = require('../controller/user/user_basket/addToBasketViewProduct');
+const updateBasketProductCart = require('../controller/user/user_basket/updateBasketProductCart');
+const deleteBasketProductCart = require('../controller/user/user_basket/deleteBasketProductCart');
+const addToFavoriteController = require('../controller/user/user_favorite/addToFavoriteController');
+const addToFavoriteViewProduct = require('../controller/user/user_favorite/addToFavoriteViewProduct');
+const deleteFavoriteProductCart = require('../controller/user/user_favorite/deleteFavoriteProductCart');
+const countFavoriteProduct = require('../controller/user/user_favorite/countFavoriteProductCart');
 
 // users 
 router.post("/signup", userSignUpController);
@@ -49,10 +54,16 @@ router.get("/search", searchProductController);
 router.post("/filter-product", filterProductController);
 router.post("/delete-product", authToken, removeProductController);
 
-// user add to cart
-router.post("/addtocart", authToken, addToCartController);
-router.get("/counAddToCartProduct", authToken, countAddToCartProduct);
-router.get("/view-card-product",authToken, addToCartViewProduct);
-router.post("/update-cart-product" ,authToken, updateAddToCartProductController);
-router.post("/delete-card-product",authToken, deleteAddToCartProductController)
+// user add to basket
+router.post("/add-to-basket", authToken, addToBasketController);
+router.get("/count-basket-product", authToken, countBasketProductCart);
+router.get("/view-basket-product",authToken, addToBasketViewProduct);
+router.post("/update-basket-product" ,authToken, updateBasketProductCart);
+router.post("/delete-basket-product",authToken, deleteBasketProductCart);
+
+// user add to favorite
+router.post("/add-to-favorite", authToken, addToFavoriteController);
+router.get("/view-favorite-product", authToken, addToFavoriteViewProduct);
+router.post("/delete-favorite-product", authToken, deleteFavoriteProductCart);
+router.get("/count-favorite-product", authToken, countFavoriteProduct);
 module.exports = router

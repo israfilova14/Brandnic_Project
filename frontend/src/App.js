@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+ 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useCallback, useState } from 'react';
@@ -9,10 +8,14 @@ import SummaryApi from './common';
 import Context from './context'; // Ensure this is properly created elsewhere
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/slices/userSlice';
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 
 function App() {
+
   const dispatch = useDispatch();
-  const [cartProductCount, setCartProductCount] = useState(0);
+  const [basketProductCount, setBasketProductCount] = useState(0);
+  const [favoriteProductCount, setFavoriteProductCount] = useState(0);
 
   // Function to fetch user details
   const fetchUserDetails = useCallback(async () => {
@@ -40,8 +43,8 @@ function App() {
     }
   }, [dispatch]);
 
-  const fetchUserAddToCart = async () => {
-    const { method, url } = SummaryApi.addToCartProductCount;
+  const fetchUserBasketProductCount = async () => {
+    const { method, url } = SummaryApi.addToBasketProductCount;
     console.log(`Fetching cart product count from ${url} with method ${method}`);
 
     try {
@@ -61,7 +64,7 @@ function App() {
       // Check if dataApi is structured correctly
       if (dataApi?.data?.count !== undefined) {
         console.log(dataApi?.data?.count);
-        setCartProductCount(dataApi.data.count); // Set the state with the actual count
+        setBasketProductCount(dataApi.data.count); // Set the state with the actual count
       } else {
         console.error("Count is undefined in the response data");
       }
@@ -70,27 +73,57 @@ function App() {
       console.error('Error Stack:', error.stack); // Log stack trace
     }
   }
+  
+  const fetchUserFavoriteProductCount = async() => {
+     const {method, url} = SummaryApi.favoriteProductCount;
+     console.log(`Fetching favorite product count from ${url} with method ${method}`);
+
+     try{
+       const response = await fetch(url, {
+         method,
+         credentials: 'include'
+       })
+       if(!response.ok){
+        throw new Error(`Failed to fetch favorite product count: ${response.status} ${response.statusText}`);
+       }
+
+       const dataApi = await response.json();
+       console.log("dataApi", dataApi);
+
+       if(dataApi?.data?.count !== undefined){
+          console.log(dataApi.data.count);
+          setFavoriteProductCount(dataApi.data.count);
+       }
+       else{
+          console.error("Count is undefined in the response data")
+       }
+     }catch(err){
+         console.error("Error fetching favorite product count", err);
+         console.error("Error Stack:", err.stack);
+     }
+  }
 
   useEffect(() => {
-    // Fetch user details on mount
     fetchUserDetails();
-    // Fetch addToCart
-    fetchUserAddToCart();
+    fetchUserBasketProductCount(); 
+    fetchUserFavoriteProductCount();
   }, [fetchUserDetails]);
 
   return (
     <div className='App'>
     <Context.Provider value={{
       fetchUserDetails,
-      cartProductCount,  // Current user add to cart product count
-      fetchUserAddToCart 
+      basketProductCount,  // Current user add to cart product count
+      fetchUserBasketProductCount,
+      favoriteProductCount,
+      fetchUserFavoriteProductCount
     }}>
       <ToastContainer />
-      <Header />
+      <Header/>
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <Footer/>
     </Context.Provider>
     </div>
   );

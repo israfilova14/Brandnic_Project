@@ -50,25 +50,41 @@ const SummaryApi = {
         url: `${backendDomen}/api/product-details`,
         method: "post"
     },
-    addToCartProduct: {
-        url: `${backendDomen}/api/addtocart`,
+    addToBasketProduct: {
+        url: `${backendDomen}/api/add-to-basket`,
         method: "post"
     },
-    addToCartProductCount : {
-        url: `${backendDomen}/api/counAddToCartProduct`,
+    addToBasketProductCount : {
+        url: `${backendDomen}/api/count-basket-product`,
         method: "get"
     },
-    addToCartProductView : {
-        url: `${backendDomen}/api/view-card-product`,
+    addToBasketProductView : {
+        url: `${backendDomen}/api/view-basket-product`,
         method: "get"
     },
-    updateCartProduct : {
-         url: `${backendDomen}/api/update-cart-product`,
+    updateBasketProduct : {
+         url: `${backendDomen}/api/update-basket-product`,
          method: "post"
     },
-    deleteCartProduct : {
-        url: `${backendDomen}/api/delete-card-product`,
+    deleteBasketProduct : {
+        url: `${backendDomen}/api/delete-basket-product`,
         method: "post"
+    },
+    addToFavoriteProduct: {
+        url: `${backendDomen}/api/add-to-favorite`,
+        method: "post"
+    },
+    addToFavoriteProductView: {
+        url: `${backendDomen}/api/view-favorite-product`,
+        method: "get"
+    },
+    deleteFavoriteProduct: {
+        url: `${backendDomen}/api/delete-favorite-product`,
+        method: "post"
+    },
+    favoriteProductCount: {
+        url: `${backendDomen}/api/count-favorite-product`,
+        method: "get"
     },
     searchProduct : {
         url: `${backendDomen}/api/search`,

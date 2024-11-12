@@ -1,0 +1,120 @@
+.tableWrapper{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tableWrapper .titleBox h2{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.tableWrapper .titleBox h2 span{
+    color: #00B98A;
+}
+
+.tableWrapper table{
+    width: 90%;
+}
+.tableWrapper table thead{
+    color: #fff;
+    background: #00B98A;
+}
+.tableWrapper table thead tr th{
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.tableWrapper table thead tr th{
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 5px;
+}
+ 
+.tableWrapper table tbody tr td{
+   padding: 10px 52px;
+   border: 1px solid #00B98A;
+}
+
+.tableWrapper table tbody tr td .actionsBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+}
+
+.tableWrapper table tbody tr td .actionsBox svg{
+    width: 22px;
+    height: 22px;
+}
+
+.tableWrapper table tbody tr td .actionsBox .edit_{
+    width: 19px;
+    height: 18px;
+    color: #00B98A;
+}
+
+.tableWrapper table tbody tr td .actionsBox .edit_:hover{
+    color: #009B70;
+}
+
+.tableWrapper table tbody tr td .actionsBox .delete_{
+    color: #cd6155;
+}
+
+.tableWrapper table tbody tr td .actionsBox .delete_:hover{
+    color: #c0392b;
+}
+
+@media only screen and (min-width: 1024px){
+    .adminPanelWrapper aside{
+        flex: 0.2;
+    }
+
+    .adminPanelWrapper main .tableWrapper{
+        flex: 0.8;
+    }
+
+    .tableWrapper table tbody tr td{
+        padding: 10px 22px;
+     }
+}
+
+@media only screen and (min-width: 924px) and (max-width:1024px){
+    .adminPanelWrapper aside{
+        flex: 0.3;
+    }
+
+    .adminPanelWrapper main .tableWrapper{
+        flex: 0.7;
+    }
+
+    .tableWrapper table tbody tr td{
+        padding: 10px 15px;
+     }
+}
+
+@media only screen and (max-width: 923px) {
+    .adminPanelWrapper aside{
+        flex: 0.35;
+    }
+
+    .adminPanelWrapper main .tableWrapper{
+        flex: 0.65;
+    }
+
+    .tableWrapper table tbody tr td{
+        padding: 5px;
+     }
+
+     .tableWrapper table{
+        width: 200px;
+    }
+    .tableWrapper .titleBox h2{
+        font-size: 25px;
+    }
+}
