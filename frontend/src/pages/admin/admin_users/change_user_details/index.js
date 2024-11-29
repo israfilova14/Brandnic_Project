@@ -100,7 +100,7 @@ const ChangeUserDetails = ({
           onClick={updateUser}
           disabled={loading}
         >
-          {loading ? 'Updating...' : 'Change Role'}
+          {loading ? 'Updating...' : 'Update User'}
         </button>
       </div>
     </div>

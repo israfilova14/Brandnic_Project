@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
- import '../basket/style.css';
+import '../basket/style.css';
 import SummaryApi from '../../../common';
 import Context from '../../../context';
 import displayCurrency from '../../../helpers/DisplayCurrency';
 import { MdDelete } from "react-icons/md";
+import {loadStripe} from '@stripe/stripe-js';
 
 const Basket = () => {
   const [data, setData] = useState([]);
@@ -102,6 +103,28 @@ const Basket = () => {
   const totalPrice = data.reduce((prev, curr) => {
        return prev + curr.quantity * curr?.productId?.sellingPrice
   },0)
+
+  const handlePayment = async() => {
+     const stripePromise = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+     
+     const response = await fetch(SummaryApi.payment.url, {
+       method: SummaryApi.payment.method,
+       credentials: 'include',
+       headers: {
+        "content-type" : "application/json"
+       },
+       body: JSON.stringify({
+         cartItems: data
+       })
+     })
+
+     const responseData = await response.json();
+     console.log("payment response", responseData);
+
+     if(responseData?.id){
+      stripePromise.redirectToCheckout({sessionId: responseData.id})
+     }
+  }
   return (
     <div className='cartWrapper'>
       <div className='container'>
@@ -177,28 +200,32 @@ const Basket = () => {
             </div>
           )}
         </div>
-        <div className='paymentWrapper'>
-          {loading ? (
-            <div className='paymentLoadBox animate-pulse'></div>
-          ) : (
-            <div className='paymentBox'>
-              <div className='paymentBoxTitle'>
-                 <h2>Your Order Details</h2>
+        {
+          data[0] && (
+            <div className='paymentWrapper'>
+            {loading ? (
+              <div className='paymentLoadBox animate-pulse'></div>
+              ) : (
+              <div className='paymentBox'>
+                <div className='paymentBoxTitle'>
+                   <h2>Your Order Details</h2>
+                </div>
+                <div className='quantityBox'>
+                   <p>Quantity:</p>
+                   <p>{totalQty}</p>
+                </div>
+                <div className='totalPriceBox'>
+                   <p>Total Price:</p>
+                   <p>{displayCurrency(totalPrice)}</p>
+                </div>
+                <div className='paymentButtonBox'>
+                  <button onClick={handlePayment}>Payment</button>
+                </div>
               </div>
-              <div className='quantityBox'>
-                 <p>Quantity:</p>
-                 <p>{totalQty}</p>
-              </div>
-              <div className='totalPriceBox'>
-                 <p>Total Price:</p>
-                 <p>{displayCurrency(totalPrice)}</p>
-              </div>
-              <div className='paymentButtonBox'>
-                <button>Payment</button>
-              </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+          )
+        }
       </div>
     </div>
   );

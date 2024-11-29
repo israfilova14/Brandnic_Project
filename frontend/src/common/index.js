@@ -101,6 +101,14 @@ const SummaryApi = {
     deleteProduct: {
         url: `${backendDomen}/api/delete-product`,
         method: "post"
+    },
+    payment: {
+        url: `${backendDomen}/api/checkout`,
+        method: "post"
+    },
+    getOrder: {
+       url: `${backendDomen}/api/order-list`,
+       method: "get"
     }
 }
 

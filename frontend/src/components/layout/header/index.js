@@ -79,7 +79,7 @@ const Header = () => {
           </div>
           <div className='iconsBox '>
             <div className='group'>
-              {user?.role === 'ADMIN' && (
+              {user && (
                 <div>
                   {user?.profilePic ? (
                     <img src={user?.profilePic} className='profilePicture' />
@@ -96,6 +96,7 @@ const Header = () => {
                     {user?.role === ROLE.ADMIN && (
                       <Link to={'/admin-panel/all-products'}>Admin Panel</Link>
                     )}
+                    <Link to={'/order'}>Order</Link>
                   </nav>
                 </div>
               )}

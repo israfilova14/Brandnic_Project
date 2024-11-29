@@ -12,6 +12,9 @@ import SignIn from "../pages/sign_in";
 import AdminPanel from "../pages/admin/admin_panel";
 import AllProducts from "../pages/admin/admin_products/all_products";
 import AllUsers from '../pages/admin/admin_users/all_users';
+import PaymentSuccess from "../pages/payment_success";
+import PaymentCancel from "../pages/payment_cancel";
+import Order from "../pages/order";
 
 const router = createBrowserRouter([
     {
@@ -51,8 +54,20 @@ const router = createBrowserRouter([
                 element: <Favorite/>
             },
             {
+                path: "/success",
+                element: <PaymentSuccess/>
+            },
+            {
+                path: "/cancel",
+                element: <PaymentCancel/>
+            },
+            {
                 path: "search",
                 element: <SearchProduct/>
+            },
+            {
+                path: "order",
+                element: <Order/>
             },
             {
                 path: "admin-panel",

@@ -118,7 +118,7 @@ function App() {
       favoriteProductCount,
       fetchUserFavoriteProductCount
     }}>
-      <ToastContainer />
+      <ToastContainer position='top-center'/>
       <Header/>
       <main>
         <Outlet />

@@ -1,0 +1,34 @@
+.paymentCancel{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #f2f3f4;
+ }
+
+ .paymentCancel img{
+  height: 240px;
+  mix-blend-mode: multiply;
+ }
+
+ .paymentCancel h2{
+  font-size: 22px;
+  font-weight: bold;
+  color: #ec5451;
+ } 
+
+ .paymentCancel a{
+   color: #ec5451;
+   border: 2px solid #ec5451;
+   padding: 5px 12px;
+   border-radius: 5px;
+   font-weight: bold;
+ }
+
+ .paymentCancel a:hover{
+   background: #ec5451;
+   color: #fff;
+ }

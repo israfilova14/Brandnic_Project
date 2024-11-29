@@ -31,6 +31,9 @@ const addToFavoriteController = require('../controller/user/user_favorite/addToF
 const addToFavoriteViewProduct = require('../controller/user/user_favorite/addToFavoriteViewProduct');
 const deleteFavoriteProductCart = require('../controller/user/user_favorite/deleteFavoriteProductCart');
 const countFavoriteProduct = require('../controller/user/user_favorite/countFavoriteProductCart');
+const paymentController = require('../controller/order/paymentController');
+const webhooks = require('../controller/order/webhook');
+const orderController = require('../controller/order/orderController');
 
 // users 
 router.post("/signup", userSignUpController);
@@ -66,4 +69,9 @@ router.post("/add-to-favorite", authToken, addToFavoriteController);
 router.get("/view-favorite-product", authToken, addToFavoriteViewProduct);
 router.post("/delete-favorite-product", authToken, deleteFavoriteProductCart);
 router.get("/count-favorite-product", authToken, countFavoriteProduct);
+
+// payment and order
+router.post("/checkout", authToken, paymentController);
+router.post("/webhook", webhooks); // api/webhook
+router.get("/order-list", authToken, orderController);
 module.exports = router

@@ -1,0 +1,33 @@
+ .paymentSuccess{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #f2f3f4;
+ }
+
+ .paymentSuccess img {
+  height: 240px;
+ }
+
+ .paymentSuccess h2{
+  font-size: 22px;
+  font-weight: bold;
+  color: #00B98A;
+ } 
+
+ .paymentSuccess a{
+   color: #00B98A;
+   border: 2px solid #00B98A;
+   padding: 5px 12px;
+   border-radius: 5px;
+   font-weight: bold;
+ }
+
+ .paymentSuccess a:hover{
+   background: #00B98A;
+   color: #fff;
+ }

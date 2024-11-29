@@ -110,8 +110,8 @@ header .container {
 }
 
 .container .box svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .container .iconsBox .group {
@@ -126,16 +126,17 @@ header .container {
     object-position: center;
     padding: 1px;
 }
-
-.container .iconsBox .group .pop_up {
+ 
+.container .iconsBox .group .pop_up nav{
     height: 50px;
-    width: 130px;
-    z-index: 1000;
-    position: absolute;
-    top:  28px;
+    width: 120px;
+    z-index: 9999;
+    position: fixed;
+    top:  60px;
     background: #fff;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
