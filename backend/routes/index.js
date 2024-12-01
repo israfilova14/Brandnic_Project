@@ -34,6 +34,7 @@ const countFavoriteProduct = require('../controller/user/user_favorite/countFavo
 const paymentController = require('../controller/order/paymentController');
 const webhooks = require('../controller/order/webhook');
 const orderController = require('../controller/order/orderController');
+const allOrdersController = require('../controller/order/allOrdersController');
 
 // users 
 router.post("/signup", userSignUpController);
@@ -74,4 +75,5 @@ router.get("/count-favorite-product", authToken, countFavoriteProduct);
 router.post("/checkout", authToken, paymentController);
 router.post("/webhook", webhooks); // api/webhook
 router.get("/order-list", authToken, orderController);
+router.get("/all-orders", authToken, allOrdersController);
 module.exports = router

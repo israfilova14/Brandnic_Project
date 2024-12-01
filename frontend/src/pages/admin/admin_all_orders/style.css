@@ -1,0 +1,114 @@
+.adminOrderWrapper{
+  width: 100%;
+  min-height: 70vh;
+}
+
+.adminOrderWrapper .emptyBox{
+  margin: 10px;
+  width: 600px;
+  height: 240px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9eaec;
+}
+
+.adminOrderWrapper .emptyBox h2{
+  font-size: 18px;
+  font-weight: 500;
+  color: #257180;
+}
+
+.adminOrderWrapper .order {
+  width: 90%;
+  margin: 5px auto;
+}
+
+.adminOrderWrapper .order .createdDate{
+  font-weight: 500;
+  font-size: 17px;
+  padding: 3px;
+}
+
+.adminOrderWrapper .order .box{
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminOrderWrapper .order .box .card{
+  display: flex;
+  gap: 20px;
+}
+
+.adminOrderWrapper .order .box .card .productTitle{
+  color: #9b009e;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+ 
+.adminOrderWrapper .order .box .card .orderImage{
+  width: 200px;
+}
+
+.adminOrderWrapper .order .box .card .aboutOrder{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.adminOrderWrapper .order .box .card .amount_box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminOrderWrapper .order .box .card .amount_box p{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.adminOrderWrapper .order .box .card .amount_box .productPrice{
+  color: #00B98A;
+}
+
+.adminOrderWrapper .order .box .aboutOrder .paymentDetails :first-child{
+  color: #9b009e;
+  font-size: 17px;
+}
+
+.adminOrderWrapper .order .box .aboutOrder .paymentDetails p{
+  font-weight: 500;
+}
+
+.adminOrderWrapper .order .box .aboutOrder .shippingDetails :first-child{
+  color: #9b009e;
+  font-size: 17px;
+}
+
+.adminOrderWrapper .order .box .aboutOrder .shippingDetails p{
+  font-weight: 500;
+}
+
+.adminOrderWrapper .order .box .aboutOrder .totalAmount{
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 715px) {
+  .adminOrderWrapper .order .box{
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .adminOrderWrapper .order .box .card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

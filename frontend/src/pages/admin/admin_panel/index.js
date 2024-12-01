@@ -26,8 +26,9 @@ const AdminPanel = () => {
                </div>
                <div className='navigationBox'>
                   <nav>
-                     <Link to={"all-users"}>All Users</Link>
+                     <Link to={'all-users'}>All Users</Link>
                      <Link to={'all-products'}>All Products</Link>
+                     <Link to={'all-orders'}>All Orders</Link>
                   </nav>
                </div>
            </aside>

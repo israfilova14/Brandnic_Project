@@ -109,6 +109,10 @@ const SummaryApi = {
     getOrder: {
        url: `${backendDomen}/api/order-list`,
        method: "get"
+    },
+    allOrders: {
+       url: `${backendDomen}/api/all-orders`,
+       method: "get"
     }
 }
 
