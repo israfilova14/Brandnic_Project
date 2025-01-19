@@ -79,9 +79,9 @@
 .container .productZoomImage{
     position: absolute;
     width: 540px;
-    height: 540px;
-    right: 250px;
-    bottom: 80px;
+    height: 520px;
+    right: 26%;
+    bottom: 22%;
     padding: 5px;
     overflow: hidden;
     background: #fff;

@@ -95,3 +95,10 @@
       
     }
 }
+
+@media only screen and (max-width: 64px){
+    
+   .productCategoryPageWrapper .container .sidebarWrapper .formBox .row label{
+        font-size: 14px;
+    }
+}

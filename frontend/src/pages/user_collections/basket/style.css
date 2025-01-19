@@ -225,6 +225,9 @@
     .cartWrapper .container .paymentWrapper .paymentLoadBox{
       width: 450px;
     }
+    .cartWrapper .container .basketEmptyBox{
+        width: 400px;
+   }
   }
   
   @media only screen and (min-width: 410px) and (max-width: 536px){
@@ -240,6 +243,13 @@
     .cartWrapper .container .paymentWrapper .paymentLoadBox{
       width: 410px;
     }
+    .cartWrapper .container .basketEmptyBox{
+         width: 360px;
+    }
+    
+    .cartWrapper .container .basketEmptyBox h2{
+        font-size: 17px;
+    }
   }
   
   @media only screen and (max-width: 460px){
@@ -249,5 +259,11 @@
   
     .cartWrapper .container .paymentWrapper .paymentLoadBox{
       display: none;
+    }
+    .cartWrapper .container .basketEmptyBox{
+        width: 360px
+    }
+    .cartWrapper .container .basketEmptyBox h2{
+        font-size: 17px;
     }
   }

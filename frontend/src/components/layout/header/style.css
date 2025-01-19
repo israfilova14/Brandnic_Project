@@ -84,7 +84,7 @@ header .container {
     flex: 0.2;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -130,7 +130,7 @@ header .container {
 .container .iconsBox .group .pop_up nav{
     height: 50px;
     width: 120px;
-    z-index: 9999;
+    z-index: 999;
     position: fixed;
     top:  60px;
     background: #fff;
@@ -220,6 +220,10 @@ header .container {
     .container .logoWrapper h2 {
         font-size: 24px;  
     }
+
+    .container .iconsBox .group .pop_up nav{
+         top: 180px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -237,5 +241,9 @@ header .container {
 
     .container .logoWrapper h2 {
         font-size: 20px; 
+    }
+
+    .container .iconsBox .group .pop_up nav{
+        top: 180px;
     }
 }

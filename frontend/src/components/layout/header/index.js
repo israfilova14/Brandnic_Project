@@ -103,7 +103,7 @@ const Header = () => {
             </div>
             {
                (
-                 (user && user.role === 'GENERAL') && (
+                 (user) && (
                   <Link to={"/favorite"} className='favorite-box box'>
                      <GrFavorite/>
                   </Link>
@@ -112,7 +112,7 @@ const Header = () => {
             }
             {
               (
-                user && user.role === 'GENERAL') && (
+                user) && (
                   <Link to={"/basket"} className='basket-box box'>
                     <BsCart2 />
                     <span>{context?.basketProductCount}</span>

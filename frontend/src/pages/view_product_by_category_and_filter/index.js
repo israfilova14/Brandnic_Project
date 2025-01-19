@@ -136,7 +136,7 @@ const ViewProductByCategoryAndFilter = () => {
                   {
                     productCategory.map((categoryName, index) => {
                       return(
-                        <div className='row'>
+                        <div className='row' key={index}>
                             <input 
                               type='checkbox'
                               name={'category'}

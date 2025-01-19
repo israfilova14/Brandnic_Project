@@ -74,5 +74,21 @@
     .bannerProductWrapper .container .background{
       background-position: center;
     }
- 
+  }
+
+  @media only screen and (max-width: 640px){
+    .bannerProductWrapper .container .banner1{
+      background-position: top;
+    }
+
+    .bannerProductWrapper .container .banner2{
+      background-position: right;
+    }
+
+    .bannerProductWrapper .container .banner3{
+      background-position: left;
+    }
+    .bannerProductWrapper .container .banner4{
+      background-position: top;
+    }
   }
