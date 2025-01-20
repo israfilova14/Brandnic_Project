@@ -29,7 +29,7 @@ const addToBasketController = async (req, res) => {
 
         if (isProductAvailable) {
             return res.json({
-                message: "Product already exists in Cart",
+                message: "Product already exists in basket",
                 success: false,
                 error: true
             });
@@ -48,7 +48,7 @@ const addToBasketController = async (req, res) => {
 
         res.status(201).json({
             data: savedProduct,
-            message: "Product added to the Cart",
+            message: "Product added to the basket",
             success: true,
             error: false
         });
