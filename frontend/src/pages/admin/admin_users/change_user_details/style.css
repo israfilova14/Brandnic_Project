@@ -98,3 +98,9 @@
 .userRoleBox .userRoleModal button:hover{
      background: #02a27a
 }
+
+@media only screen and (max-width: 570px){
+    .userRoleBox{
+         display: none;
+    }
+}

@@ -70,6 +70,47 @@
     color: #c0392b;
 }
 
+.tableWrapper .usersBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f5f5f5;
+}
+
+.tableWrapper .usersBox .userBox{
+    border:  2px solid #009B70;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.tableWrapper .usersBox .userBox .actionsBox{
+    display: flex;
+    gap: 10px;
+}
+
+.tableWrapper .usersBox .userBox .actionsBox .edit_{
+    width: 19px;
+    height: 18px;
+    color: #00B98A;
+}
+
+.tableWrapper .usersBox .userBox .actionsBox .edit_:hover{
+    color: #009B70;
+}
+
+.tableWrapper .usersBox .userBox .actionsBox .delete_{
+    font-size: 20px;
+    color: #cd6155;
+}
+
+.tableWrapper .usersBox .userBox .actionsBox .delete_:hover{
+    color: #c0392b;
+}
+
 @media only screen and (min-width: 1024px){
     .adminPanelWrapper aside{
         flex: 0.2;
@@ -108,7 +149,7 @@
     }
 
     .tableWrapper table tbody tr td{
-        padding: 5px;
+        padding: 3px;
      }
 
      .tableWrapper table{
@@ -118,3 +159,10 @@
         font-size: 25px;
     }
 }
+
+@media only screen and (max-width: 670px){
+    .tableWrapper table{
+        display: none;
+    }
+}
+

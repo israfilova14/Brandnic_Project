@@ -27,7 +27,7 @@ const VerticalProductCartModel = ({loading, data}) => {
     <div className='container'>
       <div className='wrapper scrollbar-none'>
         {loading && data.length !== 0 ? (
-          loadingList.map((_, index) => (
+          loadingList?.map((_, index) => (
             <div className='loadingCart' key={index}>
               <div className='loadingCartLeft'></div>
               <div className='loadingCartRight'>
@@ -40,7 +40,7 @@ const VerticalProductCartModel = ({loading, data}) => {
             </div>
           ))
         ) : (
-          data.map((element) => (
+          data?.map((element) => (
             <div className='productCart' key={element._id}>
               <div className='imageBox'>
                 <img src={element?.productImage[0]} alt={element?.productName} />

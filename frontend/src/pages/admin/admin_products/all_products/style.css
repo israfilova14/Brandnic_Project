@@ -84,3 +84,14 @@
         height: 29px;
     }
 }
+
+@media screen and (max-width: 570px) {
+    .allProductsWrapper .headerWrapper button{
+        padding: 5px;
+    }
+
+    .allProductsWrapper .paginationWrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

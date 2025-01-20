@@ -254,11 +254,11 @@
   
   @media only screen and (max-width: 460px){
     .cartWrapper .container .paymentWrapper .paymentBox{
-      display: none;
+       width: 360px;
     }
   
     .cartWrapper .container .paymentWrapper .paymentLoadBox{
-      display: none;
+        width: 360px;
     }
     .cartWrapper .container .basketEmptyBox{
         width: 360px
@@ -266,4 +266,12 @@
     .cartWrapper .container .basketEmptyBox h2{
         font-size: 17px;
     }
+    .cartWrapper .container .basketCards .basketCard{
+        width: 360px;
+    }
+    .cartWrapper .container{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
   }
